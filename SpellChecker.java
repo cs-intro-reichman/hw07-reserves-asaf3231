@@ -16,14 +16,15 @@ public class SpellChecker {
 	}
 
 	public static int levenshtein(String word1, String word2) {
+		word1 = word1.toLowerCase() ; 
+		word2 = word2.toLowerCase() ; 
 		if(word2.length() == 0){
 			return word1.length() ; 
 		}
 		 if(word1.length() == 0 ){
 			return word2.length() ; 
 		}
-		word1.toLowerCase() ; 
-		word2.toLowerCase() ; 
+		
 
 		 if(word1.charAt(0) == word2.charAt(0)){
 			return levenshtein(word1.substring(1), word2.substring(1)); 
@@ -60,8 +61,6 @@ public class SpellChecker {
 		if(threshold >= temp ){
 			threshold = temp ; 
 			finalword = dictionary[i] ; 
-			return finalword ;
-
 		}
 		}
 		return finalword ;
